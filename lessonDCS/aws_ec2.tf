@@ -7,7 +7,7 @@
 #   設定項目 = "値"
 # }
 resource "aws_instance" "sample_web_server" {
-  ami                    = "ami-ami-013a28d7c2ea10269"       # Amazon Linux 2023 AMI
+  ami                    = "ami-013a28d7c2ea10269"       # Amazon Linux 2023 AMI
   instance_type          = "t2.micro"                        # インスタンスタイプ
   subnet_id              = aws_subnet.sample_subnet.id       # サブネットのID
   vpc_security_group_ids = [aws_security_group.sample_sg.id] # セキュリティグループのID
@@ -20,7 +20,4 @@ sudo systemctl start httpd
 sudo systemctl enable httpd
 EOF
 
-  tags = {
-    Name = "sample_web_server" # インスタンス名
-  }
 }
