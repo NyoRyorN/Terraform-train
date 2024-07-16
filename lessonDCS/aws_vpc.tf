@@ -34,7 +34,7 @@ resource "aws_internet_gateway" "sample_igw" {
 resource "aws_route_table" "sample_rtb" {
     vpc_id = aws_vpc.sample_vpc.id # VPCのID
 
-    route = {
+    route {
         cidr_block = "0.0.0.0/0"                        # すべてのIPアドレスからのトラフィックを指定
         gateway_id = aws_internet_gateway.sample_igw.id # インターネットゲートウェイのID
     }
